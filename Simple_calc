@@ -1,0 +1,78 @@
+def add(a, b):
+  return a + b
+
+def subtract(a, b):
+  return a - b
+
+def multiply(a, b):
+  return a * b
+
+def divide(a, b):
+  return a / b
+
+def calculate(operation, a, b):
+
+  if operation == "+":
+    return add(a, b)
+  elif operation == "-":
+    return subtract(a, b)
+  elif operation == "*":
+    return multiply(a, b)
+  elif operation == "/":
+    return divide(a, b)
+  else:
+    raise ValueError("Invalid operation.")
+
+
+def main():
+
+  # Display the menu.
+  print("Welcome to the simple calculator!")
+  print("1. Add")
+  print("2. Subtract")
+  print("3. Multiply")
+  print("4. Divide")
+  print("5. Exit")
+
+  # Get the user's choice.
+  choice = int(input("Enter your choice: "))
+
+  # Perform the selected operation.
+  if choice == 1:
+    a = float(input("Enter the first number: "))
+    b = float(input("Enter the second number: "))
+    result = calculate("+", a, b)
+    print(f"{a} + {b} = {result}")
+
+  elif choice == 2:
+    a = float(input("Enter the first number: "))
+    b = float(input("Enter the second number: "))
+    result = calculate("-", a, b)
+    print(f"{a} - {b} = {result}")
+
+  elif choice == 3:
+    a = float(input("Enter the first number: "))
+    b = float(input("Enter the second number: "))
+    result = calculate("*", a, b)
+    print(f"{a} * {b} = {result}")
+
+  elif choice == 4:
+    a = float(input("Enter the first number: "))
+    b = float(input("Enter the second number: "))
+    result = calculate("/", a, b)
+    print(f"{a} / {b} = {result}")
+
+  elif choice == 5:
+    print("Goodbye!")
+    return
+
+  else:
+    print("Invalid choice.")
+
+  # Ask the user if they want to continue.
+  again = input("Do you want to continue? (y/n) ")
+  if again == "y":
+    main()
+
+if __name__ == "__main__":
+  main()
